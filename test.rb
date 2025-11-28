@@ -16,9 +16,10 @@ end
 
 fibonacci = fibonacci(10)
 
-# CodeForMeOllama: return all prime numbers in the arrray
+
+# CodeForMe: return all prime numbers in the arrray
 def prime_numbers(array)
 end
-# CodeForMeOllama: end
+# CodeForMe: end
 
 puts prime_numbers(fibonacci)
