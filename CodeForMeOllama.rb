@@ -9,7 +9,7 @@ file_lines = file.lines
 ollama_api_service = OllamaApiService.new
 
 prompt = <<~PROMPT
-  The following is a Ruby on Rails code file named "#{ARGV[0]}".
+  The following is a code file named "#{ARGV[0]}".
   Look for the comment line "# CodeForMe: <instruction>" and "# CodeForMe: end".
   Follow the instruction to modify the code inside the section.
   Only provide the modified code for the section, do not include any explanations or extra text.
@@ -22,6 +22,7 @@ PROMPT
 
 response = ollama_api_service.call(prompt: prompt)
 response.gsub!(/\A```ruby/, '')
+response.gsub!(/\A```python/, '')
 response.gsub!(/```+\z/, '')
 
 start_index = 0
